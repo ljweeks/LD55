@@ -27,6 +27,10 @@ var end = preload(("res://end.tscn"))
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$lovesong.play()
+	$summonsong.play()
+	$summonsong.set_stream_paused(true)
+	$circle.visible = false
 	state = "look"
 	$love.value = 100
 	$confidence.value = 100
@@ -92,12 +96,16 @@ func _process(delta):
 	if Input.is_action_just_pressed("look"):
 		$guy.set_texture(guy_right)
 		$circle.visible = true
+		$lovesong.set_stream_paused(true)
+		$summonsong.set_stream_paused(false)
 		guy_state = "away"
 		#swap guy sprite
 	if Input.is_action_just_released("look"):
 		guy_state = "look"
 		$guy.set_texture(guy_left)
 		$circle.visible = false
+		$lovesong.set_stream_paused(false)
+		$summonsong.set_stream_paused(true)
 
 	#guy look fill
 	if guy_state == "away" and tick < 0:

@@ -1,11 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://cm3k7ghl62qmp"]
 
 [ext_resource type="Script" path="res://fella.gd" id="1_a0loo"]
-[ext_resource type="Texture2D" uid="uid://dwhrx3yh5epud" path="res://icon.svg" id="2_vgih1"]
+[ext_resource type="Texture2D" uid="uid://ilccr564bll1" path="res://assets/fella.png" id="2_jnbkx"]
 
 [node name="Node2D" type="Node2D" groups=["fellas"]]
 script = ExtResource("1_a0loo")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(1, 1, 0, 1)
-texture = ExtResource("2_vgih1")
+texture = ExtResource("2_jnbkx")

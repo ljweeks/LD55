@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bfrej6fv8lffl"]
+[gd_scene load_steps=15 format=3 uid="uid://bfrej6fv8lffl"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_phqwk"]
 [ext_resource type="Texture2D" uid="uid://bcfpt8w6okva5" path="res://assets/back.png" id="2_r46kh"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://c0vxmqjtblbup" path="res://assets/people and bench.png" id="9_ng34m"]
 [ext_resource type="Texture2D" uid="uid://vdtxwfwitfh3" path="res://assets/love_bar.png" id="10_cf3c8"]
 [ext_resource type="Texture2D" uid="uid://cscv8jkf58eee" path="res://assets/confidence_bar.png" id="11_fummb"]
+[ext_resource type="Texture2D" uid="uid://dwl6x76mts1rv" path="res://assets/summoncircle.png" id="12_g4k5c"]
 
 [sub_resource type="Curve" id="Curve_jav6t"]
 _data = [Vector2(0, 0.768421), 0.0, 0.0, 0, 0, Vector2(0.637363, 0.778947), 0.0, 0.0, 0, 0, Vector2(0.868132, 0.505263), 0.0, 0.0, 0, 0]
@@ -107,3 +108,8 @@ texture_progress_offset = Vector2(2, 2)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 autoplay = true
+
+[node name="circle" type="Sprite2D" parent="."]
+position = Vector2(480, 380)
+scale = Vector2(1.5, 1)
+texture = ExtResource("12_g4k5c")

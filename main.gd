@@ -91,11 +91,13 @@ func _process(delta):
 		$girl/hearts.emitting = false
 	if Input.is_action_just_pressed("look"):
 		$guy.set_texture(guy_right)
+		$circle.visible = true
 		guy_state = "away"
 		#swap guy sprite
 	if Input.is_action_just_released("look"):
 		guy_state = "look"
 		$guy.set_texture(guy_left)
+		$circle.visible = false
 
 	#guy look fill
 	if guy_state == "away" and tick < 0:

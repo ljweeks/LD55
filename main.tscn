@@ -29,6 +29,9 @@ script = ExtResource("1_phqwk")
 [node name="background" type="Sprite2D" parent="."]
 texture = ExtResource("2_r46kh")
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("9_ng34m")
+
 [node name="girl" type="Sprite2D" parent="."]
 texture = ExtResource("3_sf55a")
 
@@ -84,9 +87,6 @@ points = PackedVector2Array(0, 0, 350, 0)
 width = 0.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("9_ng34m")
 
 [node name="love" type="TextureProgressBar" parent="."]
 offset_left = -578.0

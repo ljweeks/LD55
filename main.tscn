@@ -1,0 +1,106 @@
+[gd_scene load_steps=14 format=3 uid="uid://bfrej6fv8lffl"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_phqwk"]
+[ext_resource type="Texture2D" uid="uid://bcfpt8w6okva5" path="res://assets/back.png" id="2_r46kh"]
+[ext_resource type="Texture2D" uid="uid://d28euvpne042o" path="res://assets/head_turned.png" id="3_sf55a"]
+[ext_resource type="Texture2D" uid="uid://b674tq1fj3cou" path="res://assets/guy_left.png" id="4_kcbsd"]
+[ext_resource type="Texture2D" uid="uid://hltpkws8onsm" path="res://assets/heart.png" id="4_vn4nn"]
+[ext_resource type="Texture2D" uid="uid://c6abagb1s3jpv" path="res://assets/anger.png" id="5_tffdf"]
+[ext_resource type="PackedScene" uid="uid://c73wr88h80gfd" path="res://arrrows.tscn" id="5_ucl0r"]
+[ext_resource type="Texture2D" uid="uid://dilkoyuqykgjr" path="res://assets/back_bar.png" id="9_ay73w"]
+[ext_resource type="Texture2D" uid="uid://c0vxmqjtblbup" path="res://assets/people and bench.png" id="9_ng34m"]
+[ext_resource type="Texture2D" uid="uid://vdtxwfwitfh3" path="res://assets/love_bar.png" id="10_cf3c8"]
+[ext_resource type="Texture2D" uid="uid://cscv8jkf58eee" path="res://assets/confidence_bar.png" id="11_fummb"]
+
+[sub_resource type="Curve" id="Curve_jav6t"]
+_data = [Vector2(0, 0.768421), 0.0, 0.0, 0, 0, Vector2(0.637363, 0.778947), 0.0, 0.0, 0, 0, Vector2(0.868132, 0.505263), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_bdono"]
+offsets = PackedFloat32Array(0, 0.15894, 0.860927, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[node name="Node2D" type="Node2D" groups=["main"]]
+script = ExtResource("1_phqwk")
+
+[node name="background" type="Sprite2D" parent="."]
+texture = ExtResource("2_r46kh")
+
+[node name="girl" type="Sprite2D" parent="."]
+texture = ExtResource("3_sf55a")
+
+[node name="hearts" type="CPUParticles2D" parent="girl"]
+position = Vector2(-780, -150)
+emitting = false
+amount = 6
+lifetime = 1.5
+texture = ExtResource("4_vn4nn")
+direction = Vector2(1, -2)
+spread = 55.91
+gravity = Vector2(0, 0)
+initial_velocity_min = 50.51
+initial_velocity_max = 202.03
+angular_velocity_min = -58.18
+angular_velocity_max = 29.09
+angle_min = -421.8
+angle_max = 349.1
+scale_amount_curve = SubResource("Curve_jav6t")
+color_ramp = SubResource("Gradient_bdono")
+
+[node name="anger" type="CPUParticles2D" parent="girl"]
+position = Vector2(-780, -80)
+emitting = false
+amount = 6
+lifetime = 1.5
+texture = ExtResource("5_tffdf")
+direction = Vector2(1, -2)
+spread = 55.91
+gravity = Vector2(0, 0)
+initial_velocity_min = 50.51
+initial_velocity_max = 202.03
+angular_velocity_min = -58.18
+angular_velocity_max = 29.09
+angle_min = -421.8
+angle_max = 349.1
+scale_amount_min = 0.35
+scale_amount_max = 0.35
+scale_amount_curve = SubResource("Curve_jav6t")
+color_ramp = SubResource("Gradient_bdono")
+
+[node name="guy" type="Sprite2D" parent="."]
+texture = ExtResource("4_kcbsd")
+
+[node name="Node2D" parent="." instance=ExtResource("5_ucl0r")]
+position = Vector2(407.99, 0)
+
+[node name="fella_spot" type="Marker2D" parent="."]
+position = Vector2(267, 400)
+
+[node name="Line2D" type="Line2D" parent="fella_spot"]
+points = PackedVector2Array(0, 0, 350, 0)
+width = 0.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("9_ng34m")
+
+[node name="love" type="TextureProgressBar" parent="."]
+offset_left = -578.0
+offset_top = -416.0
+offset_right = 1342.0
+offset_bottom = 664.0
+value = 100.0
+texture_under = ExtResource("9_ay73w")
+texture_progress = ExtResource("10_cf3c8")
+texture_progress_offset = Vector2(2, 2)
+
+[node name="confidence" type="TextureProgressBar" parent="."]
+offset_left = -573.0
+offset_top = -342.0
+offset_right = -188.0
+offset_bottom = -214.0
+value = 50.0
+texture_under = ExtResource("9_ay73w")
+texture_progress = ExtResource("11_fummb")
+texture_progress_offset = Vector2(2, 2)

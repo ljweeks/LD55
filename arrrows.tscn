@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://c73wr88h80gfd"]
+
+[ext_resource type="Texture2D" uid="uid://b05j8bukk2470" path="res://assets/arrow.png" id="1_cmd2x"]
+[ext_resource type="Script" path="res://arrrows.gd" id="1_lnjcd"]
+
+[node name="Node2D" type="Node2D" groups=["arrows"]]
+script = ExtResource("1_lnjcd")
+
+[node name="left" type="Sprite2D" parent="."]
+rotation = 3.14159
+texture = ExtResource("1_cmd2x")
+
+[node name="down" type="Sprite2D" parent="."]
+position = Vector2(80, 0)
+rotation = 1.5708
+texture = ExtResource("1_cmd2x")
+
+[node name="up" type="Sprite2D" parent="."]
+position = Vector2(160, 0)
+rotation = -1.5708
+texture = ExtResource("1_cmd2x")
+
+[node name="right" type="Sprite2D" parent="."]
+position = Vector2(240, 0)
+texture = ExtResource("1_cmd2x")

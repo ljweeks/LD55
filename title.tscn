@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://dwkjen0hccbu6"]
+
+[ext_resource type="Script" path="res://title.gd" id="1_bvxe6"]
+[ext_resource type="Texture2D" uid="uid://bcfpt8w6okva5" path="res://assets/back.png" id="1_kb3rs"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_xr1yp"]
+font_size = 64
+
+[sub_resource type="LabelSettings" id="LabelSettings_v6ueo"]
+font_size = 64
+
+[node name="title" type="Node2D"]
+script = ExtResource("1_bvxe6")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="background" type="Sprite2D" parent="Control"]
+texture = ExtResource("1_kb3rs")
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = -344.0
+offset_top = -234.0
+offset_right = 351.0
+offset_bottom = -143.0
+text = "Summon the Confidence"
+label_settings = SubResource("LabelSettings_xr1yp")
+
+[node name="Label2" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = -536.0
+offset_top = 374.0
+offset_right = 542.0
+offset_bottom = 465.0
+text = "PRESS SPACE TO START YOUR DATE"
+label_settings = SubResource("LabelSettings_v6ueo")

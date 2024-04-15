@@ -10,6 +10,7 @@ font_size = 64
 font_size = 64
 
 [node name="title" type="Node2D"]
+scale = Vector2(0.7, 0.7)
 script = ExtResource("1_bvxe6")
 
 [node name="Camera2D" type="Camera2D" parent="."]

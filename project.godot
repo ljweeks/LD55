@@ -13,7 +13,13 @@ config_version=5
 config/name="LD55"
 run/main_scene="res://title.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://assets/fella.png"
+
+[display]
+
+window/size/viewport_width=1344
+window/size/viewport_height=756
+window/stretch/mode="viewport"
 
 [input]
 

@@ -24,6 +24,13 @@ var end = preload(("res://end.tscn"))
 
 @onready var heart = $girl/girl/hearts
 @onready var anger = $girl/girl/anger
+@onready var minLable = $ScoreBoard/VBoxContainer/Panel/min
+@onready var secLable = $ScoreBoard/VBoxContainer/Panel/sec
+@onready var fellaLable = $ScoreBoard/VBoxContainer/VBoxContainer2/fellacount
+
+var minute = 0
+var second = 0
+var fellacount = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -49,6 +56,13 @@ var tick_max = 0.25
 var tick = tick_max
 
 func _process(delta):
+	
+	if second == 60:
+		second = 0
+		minute += 1
+	
+	minLable.text = str(minute)
+	secLable.text = str(second)
 	
 	if($love.value <= 0):
 		get_tree().change_scene_to_packed(end)
@@ -112,6 +126,13 @@ func _process(delta):
 		var fellers = get_tree().get_nodes_in_group("fellas")
 		for fella in fellers:
 			$confidence.value += (fella.power * 2)
+			fellacount += 1
+			fellaLable.text = str(fellacount)
+			
 
 	if tick < 0:
 		tick = tick_max
+
+
+func _on_timer_timeout():
+	second += 1# Replace with function body.

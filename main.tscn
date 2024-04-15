@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bfrej6fv8lffl"]
+[gd_scene load_steps=20 format=3 uid="uid://bfrej6fv8lffl"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_phqwk"]
 [ext_resource type="Texture2D" uid="uid://bcfpt8w6okva5" path="res://assets/back.png" id="2_r46kh"]
@@ -16,6 +16,7 @@
 [ext_resource type="AudioStream" uid="uid://dqhppei3dagct" path="res://assets/summonsong.wav" id="14_aejxv"]
 [ext_resource type="Texture2D" uid="uid://bfwf5vdvt1uon" path="res://assets/conman.png" id="15_ckkc4"]
 [ext_resource type="Texture2D" uid="uid://bwe6f55tr7grs" path="res://assets/hearticon.png" id="16_dxf5s"]
+[ext_resource type="Texture2D" uid="uid://drs7n1frf0yma" path="res://assets/scoreboard.png" id="17_h2r54"]
 
 [sub_resource type="Curve" id="Curve_jav6t"]
 _data = [Vector2(0, 0.768421), 0.0, 0.0, 0, 0, Vector2(0.637363, 0.778947), 0.0, 0.0, 0, 0, Vector2(0.868132, 0.505263), 0.0, 0.0, 0, 0]
@@ -134,14 +135,6 @@ text = "hold space bar to summon some confidence."
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="fellacount" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 23.0
-
-[node name="clock" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 23.0
-
 [node name="manicon" type="Sprite2D" parent="."]
 position = Vector2(-600, -313)
 scale = Vector2(0.6, 0.6)
@@ -151,3 +144,62 @@ texture = ExtResource("15_ckkc4")
 position = Vector2(-608, -386)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("16_dxf5s")
+
+[node name="ScoreBoard" type="Node2D" parent="."]
+position = Vector2(450, -400)
+
+[node name="TextureRect" type="TextureRect" parent="ScoreBoard"]
+offset_right = 680.0
+offset_bottom = 377.0
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("17_h2r54")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScoreBoard"]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 180.0
+offset_bottom = 148.0
+
+[node name="Panel" type="HBoxContainer" parent="ScoreBoard/VBoxContainer"]
+layout_mode = 2
+
+[node name="min" type="Label" parent="ScoreBoard/VBoxContainer/Panel"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "00"
+horizontal_alignment = 1
+
+[node name="colon" type="Label" parent="ScoreBoard/VBoxContainer/Panel"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = ":"
+horizontal_alignment = 1
+
+[node name="sec" type="Label" parent="ScoreBoard/VBoxContainer/Panel"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "00"
+horizontal_alignment = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="ScoreBoard/VBoxContainer"]
+layout_mode = 2
+
+[node name="title" type="Label" parent="ScoreBoard/VBoxContainer/VBoxContainer2"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "SUMMONS"
+
+[node name="fellacount" type="Label" parent="ScoreBoard/VBoxContainer/VBoxContainer2"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "0"
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

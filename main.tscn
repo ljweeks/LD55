@@ -119,3 +119,14 @@ texture = ExtResource("12_g4k5c")
 [node name="summonsong" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("14_aejxv")
 bus = &"Music"
+
+[node name="Label" type="Label" parent="."]
+self_modulate = Color(1, 0.137255, 1, 1)
+offset_left = 600.0
+offset_top = -30.0
+offset_right = 750.0
+offset_bottom = 48.0
+scale = Vector2(2, 2)
+text = "hold space bar to summon some confidence."
+horizontal_alignment = 1
+autowrap_mode = 2

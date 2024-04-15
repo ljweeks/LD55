@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bfrej6fv8lffl"]
+[gd_scene load_steps=19 format=3 uid="uid://bfrej6fv8lffl"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_phqwk"]
 [ext_resource type="Texture2D" uid="uid://bcfpt8w6okva5" path="res://assets/back.png" id="2_r46kh"]
@@ -14,6 +14,8 @@
 [ext_resource type="AudioStream" uid="uid://c7cj15468p84h" path="res://assets/lovesong.wav" id="12_btx5p"]
 [ext_resource type="Texture2D" uid="uid://dwl6x76mts1rv" path="res://assets/summoncircle.png" id="12_g4k5c"]
 [ext_resource type="AudioStream" uid="uid://dqhppei3dagct" path="res://assets/summonsong.wav" id="14_aejxv"]
+[ext_resource type="Texture2D" uid="uid://bfwf5vdvt1uon" path="res://assets/conman.png" id="15_ckkc4"]
+[ext_resource type="Texture2D" uid="uid://bwe6f55tr7grs" path="res://assets/hearticon.png" id="16_dxf5s"]
 
 [sub_resource type="Curve" id="Curve_jav6t"]
 _data = [Vector2(0, 0.768421), 0.0, 0.0, 0, 0, Vector2(0.637363, 0.778947), 0.0, 0.0, 0, 0, Vector2(0.868132, 0.505263), 0.0, 0.0, 0, 0]
@@ -131,3 +133,21 @@ scale = Vector2(2, 2)
 text = "hold space bar to summon some confidence."
 horizontal_alignment = 1
 autowrap_mode = 2
+
+[node name="fellacount" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="clock" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="manicon" type="Sprite2D" parent="."]
+position = Vector2(-600, -313)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("15_ckkc4")
+
+[node name="hearticon" type="Sprite2D" parent="."]
+position = Vector2(-608, -386)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("16_dxf5s")

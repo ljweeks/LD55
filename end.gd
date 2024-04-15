@@ -1,10 +1,14 @@
 extends Node2D
 
+@onready var minLable = $ScoreBoard/VBoxContainer/Panel/min
+@onready var secLable = $ScoreBoard/VBoxContainer/Panel/sec
+@onready var fellaLable = $ScoreBoard/VBoxContainer/VBoxContainer2/fellacount
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	
-	pass # Replace with function body.
+	minLable.text = str(Scoring.cur_min)
+	secLable.text = str(Scoring.cur_sec)
+	fellaLable.text = str(Scoring.cur_count)
 
 #@onready var scene = preload("res://main.tscn")
 # Called every frame. 'delta' is the elapsed time since the previous frame.

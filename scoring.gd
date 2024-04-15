@@ -1,11 +1,15 @@
 extends Node
-var fellacount = 0
-var longestMin = 0
-var longestSec = 0
-var highestCount = 0
+
+var cur_count 
+var cur_min
+var cur_sec
+
+var max_min
+var max_sec
+var max_count
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -28,6 +28,7 @@ var end = preload(("res://end.tscn"))
 @onready var secLable = $ScoreBoard/VBoxContainer/Panel/sec
 @onready var fellaLable = $ScoreBoard/VBoxContainer/VBoxContainer2/fellacount
 
+var global = preload("res://scoring.gd")
 var minute = 0
 var second = 0
 var fellacount = 0
@@ -67,6 +68,9 @@ func _process(delta):
 	secLable.text = str(second)
 	
 	if($love.value <= 0):
+		Scoring.cur_min = minute
+		Scoring.cur_sec = second
+		Scoring.cur_count = fellacount
 		get_tree().change_scene_to_packed(end)
 	
 	tick -= delta

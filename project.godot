@@ -15,6 +15,10 @@ run/main_scene="res://title.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://assets/fella.png"
 
+[autoload]
+
+Scoring="*res://scoring.gd"
+
 [display]
 
 window/size/viewport_width=1344

@@ -47,6 +47,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func spawn_fella():
+	fellacount += 1
+	fellaLable.text = str(fellacount)
 	var dude = fella.instantiate()
 	add_child(dude)
 	dude.position.x = $fella_spot.position.x + rng.randi_range(0, 350)
@@ -63,9 +65,6 @@ func _process(delta):
 	
 	minLable.text = str(minute)
 	secLable.text = str(second)
-	
-	fellacount = (get_tree().get_nodes_in_group("fellas").size())
-	fellaLable.text = str(fellacount)
 	
 	if($love.value <= 0):
 		get_tree().change_scene_to_packed(end)

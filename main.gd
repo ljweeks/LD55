@@ -123,11 +123,14 @@ func _process(delta):
 
 	#guy look fill
 	if guy_state == "away" and tick < 0:
+		var basecount = 0
 		var fellers = get_tree().get_nodes_in_group("fellas")
 		for fella in fellers:
 			$confidence.value += (fella.power * 2)
-			fellacount += 1
-			fellaLable.text = str(fellacount)
+			basecount += 1
+		if fellacount != basecount:
+			fellacount = basecount
+			fellaLable.text = str(basecount)
 			
 
 	if tick < 0:

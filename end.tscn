@@ -1,13 +1,13 @@
 [gd_scene load_steps=4 format=3 uid="uid://d0t6oukrrlrvr"]
 
-[ext_resource type="Script" path="res://title.gd" id="1_lu1ma"]
+[ext_resource type="Script" path="res://end.gd" id="1_444xw"]
 [ext_resource type="Texture2D" uid="uid://bcfpt8w6okva5" path="res://assets/back.png" id="2_u1tvm"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_v4t1n"]
 font_size = 64
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_lu1ma")
+script = ExtResource("1_444xw")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_u1tvm")

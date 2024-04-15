@@ -64,6 +64,9 @@ func _process(delta):
 	minLable.text = str(minute)
 	secLable.text = str(second)
 	
+	fellacount = (get_tree().get_nodes_in_group("fellas").size())
+	fellaLable.text = str(fellacount)
+	
 	if($love.value <= 0):
 		get_tree().change_scene_to_packed(end)
 	
@@ -123,14 +126,9 @@ func _process(delta):
 
 	#guy look fill
 	if guy_state == "away" and tick < 0:
-		var basecount = 0
 		var fellers = get_tree().get_nodes_in_group("fellas")
 		for fella in fellers:
 			$confidence.value += (fella.power * 2)
-			basecount += 1
-		if fellacount != basecount:
-			fellacount = basecount
-			fellaLable.text = str(basecount)
 			
 
 	if tick < 0:

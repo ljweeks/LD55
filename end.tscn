@@ -39,6 +39,7 @@ horizontal_alignment = 1
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="ScoreBoard" type="Node2D" parent="."]
+position = Vector2(-270, 0)
 
 [node name="TextureRect" type="TextureRect" parent="ScoreBoard"]
 offset_left = -204.0
@@ -61,6 +62,12 @@ offset_right = 80.0
 offset_bottom = 79.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Label2" type="Label" parent="ScoreBoard/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Recent Score"
+horizontal_alignment = 1
 
 [node name="Label" type="Label" parent="ScoreBoard/VBoxContainer"]
 layout_mode = 2
@@ -106,6 +113,87 @@ text = "FELLAS SUMMONS"
 horizontal_alignment = 1
 
 [node name="fellacount" type="Label" parent="ScoreBoard/VBoxContainer/VBoxContainer2"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "0"
+horizontal_alignment = 1
+
+[node name="HighScoreBoard" type="Node2D" parent="."]
+position = Vector2(270, 0)
+
+[node name="TextureRect" type="TextureRect" parent="HighScoreBoard"]
+offset_left = -204.0
+offset_top = -113.1
+offset_right = 476.0
+offset_bottom = 263.9
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_dyqc7")
+stretch_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HighScoreBoard"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -79.0
+offset_right = 80.0
+offset_bottom = 79.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label2" type="Label" parent="HighScoreBoard/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "High Score"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="HighScoreBoard/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "LONGEST ROMANCE"
+horizontal_alignment = 1
+
+[node name="Panel" type="HBoxContainer" parent="HighScoreBoard/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="min" type="Label" parent="HighScoreBoard/VBoxContainer/Panel"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "00"
+horizontal_alignment = 1
+
+[node name="colon" type="Label" parent="HighScoreBoard/VBoxContainer/Panel"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = ":"
+horizontal_alignment = 1
+
+[node name="sec" type="Label" parent="HighScoreBoard/VBoxContainer/Panel"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "00"
+horizontal_alignment = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HighScoreBoard/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="title" type="Label" parent="HighScoreBoard/VBoxContainer/VBoxContainer2"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "MOST SUMMONS"
+horizontal_alignment = 1
+
+[node name="fellacount" type="Label" parent="HighScoreBoard/VBoxContainer/VBoxContainer2"]
 modulate = Color(0, 0, 0, 1)
 layout_mode = 2
 theme_override_font_sizes/font_size = 26
